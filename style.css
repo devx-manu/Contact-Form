@@ -1,0 +1,145 @@
+/* ===============================
+   FUTURISTIC DARK CONTACT FORM
+   =============================== */
+:root {
+  --bg-color: #0f111a;
+  --card-color: #1a1c27;
+  --text-color: #e0e0e0;
+  --error-color: #ff4c4c;
+  --success-color: #4cff88;
+  --primary-glow: #00eaff;
+  --input-shadow: 0 0 12px rgba(0, 234, 255, 0.3);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+.form-container {
+  background: var(--card-color);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(0, 234, 255, 0.15),
+              inset 0 0 15px rgba(255, 255, 255, 0.05);
+  width: 100%;
+  max-width: 420px;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  color: var(--primary-glow);
+  text-shadow: 0 0 12px var(--primary-glow);
+}
+
+.form-group {
+  margin-bottom: 1.2rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 12px;
+  background: #10121a;
+  color: var(--text-color);
+  font-size: 1rem;
+  outline: none;
+  box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+  box-shadow: 0 0 12px var(--primary-glow), var(--input-shadow);
+  border: 1px solid var(--primary-glow);
+}
+
+textarea {
+  resize: none;
+  height: 100px;
+}
+
+button {
+  width: 100%;
+  padding: 0.9rem;
+  border: none;
+  border-radius: 14px;
+  background: var(--primary-glow);
+  color: #000;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px var(--primary-glow);
+}
+
+.error {
+  color: var(--error-color);
+  font-size: 0.85rem;
+  margin-top: 0.3rem;
+  display: none;
+}
+
+.success {
+  margin-top: 1rem;
+  color: var(--success-color);
+  font-weight: bold;
+  text-align: center;
+  display: none;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+input.error-border,
+textarea.error-border {
+  border: 1px solid var(--error-color);
+  box-shadow: 0 0 10px var(--error-color);
+}
+
+input.success-border,
+textarea.success-border {
+  border: 1px solid var(--success-color);
+  box-shadow: 0 0 10px var(--success-color);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .form-container {
+    padding: 1.5rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+}
